@@ -1,0 +1,18 @@
+---
+layout: default
+title: My Orthodox Library
+---
+
+<h1>Orthodox Book Collection</h1>
+
+<div class="library-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+  {% for book in site.data.books %}
+    <div class="book-card" style="border: 1px solid #d1b06b; padding: 15px; border-radius: 8px; background: #fdfcf8;">
+      <h3 style="margin-top: 0; color: #5c4033;">{{ book.title }}</h3>
+      <p><strong>By:</strong> {{ book.author }}</p>
+      <span style="font-size: 0.8em; background: #eee; padding: 2px 5px;">{{ book.category }}</span>
+      <br><br>
+      <a href="/assets/pdfs/{{ book.file }}" target="_blank" style="text-decoration: none; color: white; background: #8b0000; padding: 8px 12px; border-radius: 4px; display: inline-block;">Read PDF</a>
+    </div>
+  {% endfor %}
+</div>
